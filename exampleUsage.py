@@ -17,7 +17,7 @@ dataMaker.initBeforeMake(d, k, signal_to_noise_ratio=10.0)
 
 # This is where the sketching actually happens
 sketcher = FrequentDirections(d,ell)
-for i in xrange(n):
+for i in range(n):
     row = dataMaker.makeRow()
     sketcher.append(row)
 sketch = sketcher.get()
