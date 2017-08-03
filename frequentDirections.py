@@ -26,7 +26,7 @@ class FrequentDirections:
             [_,s,Vt] = scipy_svd(self._sketch, full_matrices = False)
 
         if len(s) >= self.ell:
-            sShrunk = sqrt(s[:self.ell]**2 - s[self.ell-1]**2)
+            sShrunk = sqrt(s[:self.ell]**2 - s[self.ell]**2)
             self._sketch[:self.ell:,:] = sShrunk.reshape(self.ell, 1) * Vt[:self.ell,:]
             self._sketch[self.ell:,:] = 0
             self.nextZeroRow = self.ell
